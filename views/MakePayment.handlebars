@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/main.css">
+
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card p-5">
+        <div>
+            <h4 class="heading"><b>Name:</b> {{name}}Manuel Ramirez</h4>
+            <h4 class="heading"><b>Account:</b> {{account}}256588</h4>
+            <h4 class="heading"><b>Reference:</b> {{reference}}TP000321</h4>
+            <h4 class="heading"><b>Code:</b> {{code}}124578</h4>
+            <h4 class="heading"><b>Payment date:</b> {{date}}2021-04-02</h4>
+            <p class="text">Please make the payment to continue enjoying all the features of our premium plan as soon as possible</p>
+        </div>
+        <div class="pricing p-3 rounded mt-4 d-flex justify-content-between">
+            <div class="images d-flex flex-row align-items-center"> 
+                <img src="/img/Tripleplaypng.png" class="rounded" width="60">
+                <div class="d-flex flex-column ml-4"> 
+                    <span class="business">Triple Play</span> 
+                    <span class="plan">Plan: Triple Play TV</span> 
+                </div>
+            </div>
+            <!--pricing table-->
+            <div class="d-flex flex-row align-items-center"> <sup class="dollar font-weight-bold">$</sup> <span class="amount ml-1 mr-1">{{amount}}$500,000.00</span></div> <!-- /pricing table-->
+        </div> <span class="detail mt-5">Payment details</span>
+        <div class="credit rounded mt-4 d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/qHX7vY1.png" class="rounded" width="70">
+                <div class="d-flex flex-column ml-3"> <span class="business">Credit Card</span> <span class="plan">XXXX XXXX XXXX 1234</span> </div>
+            </div>
+            <div> <button class="btn btn-default btn-danger">Delete <i class="fa fa-trash"></i></button> </div>
+        </div>
+        <h6 class="mt-4 text-primary" style="cursor: pointer;">ADD PAYMENT METHOD</h6>
+        <hr>
+        {{!-- <div class="email mt-2"> <input type="text" class="form-control email-text" placeholder="Email Address"> </div> --}}
+        <div class="mt-3"> <button class="btn btn-primary btn-block payment-button">Proceed to payment <i class="fa fa-credit-card"></i></button> </div>
+    </div>
+</div>
