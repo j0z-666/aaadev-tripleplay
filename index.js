@@ -35,21 +35,21 @@ app.get('/citizenInfo', function(req, res) {
     })
 });
 
-app.get('/makepayent', function(req, res){
-    return axios.get('')
-    .then(function(resp){
-        return axios.get('')
-        .then(function(resp1){
-            res.render('MakePayment');
-
-        })
-        .catch(function(error1){
-
-        });
-    })
-    .catch(function(error){
-
-    });
+app.get('/makepayment', function(req, res){
+    // return axios.get('')
+    // .then(function(resp){
+    //     return axios.get('')
+    //     .then(function(resp1){
+            
+    //     })
+    //     .catch(function(error1){
+            
+    //     });
+    // })
+    // .catch(function(error){
+        
+    // });
+    res.render('MakePayment');
 });
 
 
