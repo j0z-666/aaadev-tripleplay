@@ -36,20 +36,31 @@ app.get('/citizenInfo', function(req, res) {
 });
 
 app.get('/makepayment', function(req, res){
-    // return axios.get('')
-    // .then(function(resp){
-    //     return axios.get('')
-    //     .then(function(resp1){
+
+    let cuenta = req.query.id;
+    let context = req.query.contextid;
+
+    return axios.get(`https://breeze2-196.collaboratory.avaya.com/services/AAADEVCPaaSWorkShopAPI/ws/usuarios/${cuenta}/numerodecuenta?cuenta=Tripleplay`)
+    .then(function(resp){
+        return axios.get(`https://breeze2-196.collaboratory.avaya.com/services/AAADEVContextStore/cs/contexts/${context}`)
+        .then(function(resp1){
+            let payload = {
+                name: resp.data.usuario.nombre,
+                account: cuenta,
+                reference: context,
+                code: resp1.data.data.numeroDeRecibo,
+                date: resp1.data.data.fechaDePago,
+                amount: resp1.data.data.montoDelPago
+            }
+            res.render('MakePayment', payload);
+        })
+        .catch(function(error1){
             
-    //     })
-    //     .catch(function(error1){
-            
-    //     });
-    // })
-    // .catch(function(error){
+        });
+    })
+    .catch(function(error){
         
-    // });
-    res.render('MakePayment');
+    });
 });
 
 
